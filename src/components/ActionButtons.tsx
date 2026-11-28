@@ -39,11 +39,12 @@ function Button({
         {
           flex: 1,
           paddingVertical: 14,
-          borderRadius: 12,
+          borderRadius: 14,
           alignItems: "center",
           justifyContent: "center",
           backgroundColor,
           opacity: disabled ? 0.45 : pressed ? 0.85 : 1,
+          outlineWidth: 0,
         },
         style,
       ]}
@@ -63,37 +64,33 @@ export function ActionButtons({
 }: ActionButtonsProps) {
   return (
     <View style={{ width: "100%" }}>
-      <View style={{ width: "100%", flexDirection: "row", marginBottom: 10 }}>
+      <View style={{ width: "100%", flexDirection: "row", gap: 8, marginBottom: 10 }}>
         <Button
-          label="-"
+          label="−"
           onPress={onDecrement}
           disabled={isZero}
-          backgroundColor="#2563EB"
-          style={{ marginRight: 6 }}
+          backgroundColor="#007AFF"
           accessibilityLabel="Decrementar contador"
         />
         <Button
           label="+"
           onPress={onIncrement}
-          backgroundColor="#16A34A"
-          style={{ marginLeft: 6 }}
+          backgroundColor="#34C759"
           accessibilityLabel="Incrementar contador"
         />
       </View>
-      <View style={{ width: "100%", flexDirection: "row" }}>
+      <View style={{ width: "100%", flexDirection: "row", gap: 8 }}>
         <Button
           label="Zerar"
           onPress={onReset}
           disabled={isZero}
-          backgroundColor="#F59E0B"
-          style={{ marginRight: 6 }}
+          backgroundColor="#FF9500"
           accessibilityLabel="Zerar contador"
         />
         <Button
           label={nextThemeLabel}
           onPress={onToggleTheme}
-          backgroundColor="#7C3AED"
-          style={{ marginLeft: 6 }}
+          backgroundColor="#AF52DE"
           accessibilityLabel="Alternar tema"
         />
       </View>

@@ -24,14 +24,12 @@ export function GoalProgress({
     <View style={{ width: "100%", marginBottom: 12 }}>
       <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 8 }}>
         <Text style={{ color: textColor, fontWeight: "600" }}>Meta diária</Text>
-        <Text style={{ color: subtitleColor }}>
-          {contador}/{meta}
-        </Text>
+        <Text style={{ color: subtitleColor }}>Meta: {meta}</Text>
       </View>
       <View
         style={{
-          height: 10,
-          borderRadius: 20,
+          height: 6,
+          borderRadius: 3,
           overflow: "hidden",
           backgroundColor: progressTrackColor,
         }}
@@ -41,15 +39,15 @@ export function GoalProgress({
       >
         <View
           style={{
-            height: 10,
+            height: 6,
             width: `${pct}%`,
-            backgroundColor: "#22A447",
-            borderRadius: 20,
+            backgroundColor: "#34C759",
+            borderRadius: 3,
           }}
         />
       </View>
       <Text style={{ textAlign: "center", marginTop: 8, color: concluida ? "#16A34A" : subtitleColor, fontWeight: concluida ? "700" : "400" }}>
-        {concluida ? "Meta atingida! 🎉" : `${pct}% da meta`}
+        {concluida ? "Meta atingida!" : `${pct}% da meta`}
       </Text>
     </View>
   );

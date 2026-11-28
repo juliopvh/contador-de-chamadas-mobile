@@ -14,24 +14,26 @@ export const styles = StyleSheet.create({
   },
   cartao: {
     width: "100%",
-    maxWidth: 430,
-    borderRadius: 22,
-    padding: 22,
-    elevation: 4,
+    maxWidth: 420,
+    borderRadius: 24,
+    padding: 20,
+    elevation: 2,
     shadowColor: colors.shadow,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.12,
-    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 16,
   },
   titulo: {
     fontWeight: "700",
     textAlign: "center",
+    letterSpacing: -0.4,
   },
   subtitulo: {
     fontSize: 15,
+    fontWeight: "400",
     textAlign: "center",
-    marginTop: 6,
-    marginBottom: 18,
+    marginTop: 4,
+    marginBottom: 16,
   },
   input: {
     borderWidth: 1,
@@ -42,7 +44,8 @@ export const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: "600",
     textAlign: "center",
-    marginVertical: 15,
+    marginVertical: 12,
+    letterSpacing: -0.2,
   },
   visor: {
     borderRadius: 18,
@@ -52,11 +55,14 @@ export const styles = StyleSheet.create({
   },
   rotulo: {
     fontSize: 12,
-    fontWeight: "700",
+    fontWeight: "600",
+    letterSpacing: 0.6,
+    textTransform: "uppercase",
   },
   numero: {
-    fontSize: 52,
+    fontSize: 56,
     fontWeight: "800",
+    letterSpacing: -1,
   },
   mensagem: {
     color: colors.success,
@@ -75,8 +81,8 @@ export const styles = StyleSheet.create({
   },
   botao: {
     flex: 1,
-    paddingVertical: 14,
-    borderRadius: 12,
+    paddingVertical: 12,
+    borderRadius: 14,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -100,6 +106,19 @@ export const styles = StyleSheet.create({
     opacity: 0.45,
   },
   textoBotao: {
+    color: colors.buttonText,
+    fontSize: 15,
+    fontWeight: "700",
+  },
+
+  botaoResumo: {
+    paddingVertical: 14,
+    borderRadius: 14,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  textoBotaoResumo: {
     color: colors.buttonText,
     fontSize: 15,
     fontWeight: "700",

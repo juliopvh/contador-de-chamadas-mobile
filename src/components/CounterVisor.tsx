@@ -10,7 +10,7 @@ interface CounterVisorProps {
 export function CounterVisor({ contador, visorColor, subtitleColor, numberColor }: CounterVisorProps) {
   return (
     <View
-      style={{ backgroundColor: visorColor, borderRadius: 18, padding: 20, alignItems: "center", marginBottom: 12 }}
+      style={{ backgroundColor: visorColor, borderRadius: 16, padding: 20, alignItems: "center", marginBottom: 12 }}
       accessibilityRole="summary"
       accessibilityLabel={`Contagem atual: ${contador}`}
     >

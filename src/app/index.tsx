@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
+import { BlurView } from "expo-blur";
+import { LinearGradient } from "expo-linear-gradient";
 import { useTranslation } from "react-i18next";
-import { Platform, ScrollView, Text, TextInput, View, useWindowDimensions } from "react-native";
+import { router } from "expo-router";
+import { Platform, Pressable, ScrollView, Text, TextInput, useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { styles } from "../../styles";
@@ -39,7 +42,10 @@ export default function GoalCounterScreen() {
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: tema.background }]}>
+    <LinearGradient
+      colors={[tema.background, tema.surface, tema.background]}
+      style={styles.container}
+    >
       <StatusBar style={statusBarStyle} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
@@ -51,12 +57,17 @@ export default function GoalCounterScreen() {
           },
         ]}
       >
-        <View
+        <BlurView
+          intensity={50}
+          tint={temaAtual === "light" ? "light" : "dark"}
           style={[
             styles.cartao,
             {
-              padding: telaPequena ? 15 : 22,
-              backgroundColor: tema.surface,
+              padding: telaPequena ? 15 : 20,
+              backgroundColor: tema.surface + "CC",
+              borderWidth: temaAtual === "purple" ? 1 : 0,
+              borderColor: tema.border + "99",
+              overflow: "hidden",
             },
           ]}
         >
@@ -100,10 +111,35 @@ export default function GoalCounterScreen() {
             onReset={reset}
             onToggleTheme={toggleTheme}
           />
-        </View>
+
+          <Pressable
+            style={[
+              styles.botaoResumo,
+              {
+                backgroundColor: tema.title,
+                marginTop: 12,
+              },
+            ]}
+            onPress={() =>
+              router.push({
+                pathname: "/resumo",
+                params: {
+                  nome: nome.trim() || "Estudante",
+                  contador: String(contador),
+                  meta: String(DAILY_GOAL),
+                  temaAtual,
+                },
+              })
+            }
+            accessibilityRole="button"
+            accessibilityLabel="Ver resumo da meta"
+          >
+            <Text style={styles.textoBotaoResumo}>Ver resumo da meta</Text>
+          </Pressable>
+        </BlurView>
 
         <Text style={[styles.rodape, { color: tema.subtitle }]}>{t("footer")}</Text>
       </ScrollView>
-    </View>
+    </LinearGradient>
   );
 }
