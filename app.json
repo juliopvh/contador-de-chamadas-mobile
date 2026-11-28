@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "Meu Contador de Metas",
+    "slug": "meu-contador-de-metas",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "meucontador",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.juliocesar.meuprimeiroapp"
+    },
+    "android": {
+      "package": "com.juliocesar.meuprimeiroapp",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F1F5F9",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "dark": {
+            "image": "./assets/splash-icon.png",
+            "backgroundColor": "#0F172A"
+          }
+        }
+      ],
+      "expo-router",
+      "expo-status-bar",
+      "expo-font",
+      "expo-localization",
+      "@sentry/react-native"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
